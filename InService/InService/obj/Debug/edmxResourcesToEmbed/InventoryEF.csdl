@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LocalDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="LocalDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="LocalDBModel.User" />
+    <EntitySet Name="Categories" EntityType="LocalDBModel.Category" />
+    <EntitySet Name="Departments" EntityType="LocalDBModel.Department" />
+    <EntitySet Name="Locations" EntityType="LocalDBModel.Location" />
+    <EntitySet Name="SubCategories" EntityType="LocalDBModel.SubCategory" />
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+    <Property Name="DepartmentName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="LocationId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="Int32" Nullable="false" />
+    <Property Name="LocationName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SubCategory">
+    <Key>
+      <PropertyRef Name="SubCategoryId" />
+    </Key>
+    <Property Name="SubCategoryId" Type="Int32" Nullable="false" />
+    <Property Name="SubCategoryName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryId" Type="Int32" />
+  </EntityType>
+</Schema>

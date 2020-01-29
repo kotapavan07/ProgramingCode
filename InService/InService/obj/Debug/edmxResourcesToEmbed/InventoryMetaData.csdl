@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LocalDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="IN_CATEGORY">
+    <Key>
+      <PropertyRef Name="CAT_ID" />
+    </Key>
+    <Property Name="CAT_ID" Type="Int32" Nullable="false" />
+    <Property Name="CAT_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_ID" Type="Int32" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="IN_DEPARTMENT">
+    <Key>
+      <PropertyRef Name="DEPT_ID" />
+    </Key>
+    <Property Name="DEPT_ID" Type="Int32" Nullable="false" />
+    <Property Name="DEPT_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="LOC_ID" Type="Int32" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="IN_LOCATION">
+    <Key>
+      <PropertyRef Name="LOC_ID" />
+    </Key>
+    <Property Name="LOC_ID" Type="Int32" Nullable="false" />
+    <Property Name="LOC_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="IN_SUB_CATEGORY">
+    <Key>
+      <PropertyRef Name="SUB_CAT_ID" />
+    </Key>
+    <Property Name="SUB_CAT_ID" Type="Int32" Nullable="false" />
+    <Property Name="SUB_CAT_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CAT_ID" Type="Int32" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="LocalDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="IN_CATEGORY" EntityType="Self.IN_CATEGORY" />
+    <EntitySet Name="IN_DEPARTMENT" EntityType="Self.IN_DEPARTMENT" />
+    <EntitySet Name="IN_LOCATION" EntityType="Self.IN_LOCATION" />
+    <EntitySet Name="IN_SUB_CATEGORY" EntityType="Self.IN_SUB_CATEGORY" />
+  </EntityContainer>
+</Schema>

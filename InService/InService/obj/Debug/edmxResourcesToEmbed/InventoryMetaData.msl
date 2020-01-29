@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LocalDBModelStoreContainer" CdmEntityContainer="LocalDBEntities">
+    <EntitySetMapping Name="IN_CATEGORY">
+      <EntityTypeMapping TypeName="LocalDBModel.IN_CATEGORY">
+        <MappingFragment StoreEntitySet="IN_CATEGORY">
+          <ScalarProperty Name="CAT_ID" ColumnName="CAT_ID" />
+          <ScalarProperty Name="CAT_NAME" ColumnName="CAT_NAME" />
+          <ScalarProperty Name="DEPT_ID" ColumnName="DEPT_ID" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IN_DEPARTMENT">
+      <EntityTypeMapping TypeName="LocalDBModel.IN_DEPARTMENT">
+        <MappingFragment StoreEntitySet="IN_DEPARTMENT">
+          <ScalarProperty Name="DEPT_ID" ColumnName="DEPT_ID" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="LOC_ID" ColumnName="LOC_ID" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IN_LOCATION">
+      <EntityTypeMapping TypeName="LocalDBModel.IN_LOCATION">
+        <MappingFragment StoreEntitySet="IN_LOCATION">
+          <ScalarProperty Name="LOC_ID" ColumnName="LOC_ID" />
+          <ScalarProperty Name="LOC_NAME" ColumnName="LOC_NAME" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IN_SUB_CATEGORY">
+      <EntityTypeMapping TypeName="LocalDBModel.IN_SUB_CATEGORY">
+        <MappingFragment StoreEntitySet="IN_SUB_CATEGORY">
+          <ScalarProperty Name="SUB_CAT_ID" ColumnName="SUB_CAT_ID" />
+          <ScalarProperty Name="SUB_CAT_NAME" ColumnName="SUB_CAT_NAME" />
+          <ScalarProperty Name="CAT_ID" ColumnName="CAT_ID" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

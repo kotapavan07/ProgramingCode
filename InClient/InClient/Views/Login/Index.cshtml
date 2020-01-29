@@ -1,0 +1,331 @@
+﻿@model InClient.Models.UserModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    <div class="login-page">
+        <div class="form">
+            <form calss>
+
+                <div class="row group">
+                    <h1 style="font-family: Calibri"> @ViewBag.Title </h1>
+                </div>
+
+                <div class="row group">
+                    @Html.TextBox("UserName")
+                    @*<input type="text" id="UserName" placeholder="Username">*@<span class="highlight"></span><span class="bar"></span>
+                </div>
+
+                <div class="row group">
+                    @Html.Password("Password")
+                    @*<input type="password" id="Password" placeholder="Password">*@<span class="highlight"></span><span class="bar"></span>
+                </div>
+                <div class="row group">
+                    <input type="submit" value=" Sign In">
+                </div>
+                @*<div class="row group">
+                        <button type="button" class="button buttonBlue roundCorner" onclick="LogInValidation()">
+                            Sign In
+                        </button>
+                    </div>*@
+
+            </form>
+        </div>
+    </div>
+
+}
+
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+    </script>
+}
+<style>
+    .login-page {
+        width: 360px;
+        padding: 8% 0 0;
+        margin: auto;
+    }
+
+    .login {
+        position: relative;
+        margin: 0 auto;
+        padding: 20px 20px 20px; /*padding-top: 0px;
+        padding-left: 0px;
+        padding-right: 0px;*/
+        padding-bottom: 0px;
+        max-width: 360px;
+        background: white;
+        border-radius: 10px;
+    }
+
+    .form {
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        max-width: 360px;
+        margin: 0 auto 100px;
+        padding: 45px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+
+
+    .footer {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 10px; /*background-color: #c8ddf5;*/
+        text-align: center; /*border:1px solid #4a89dc;*/
+        font-size: 1em;
+        font-family: open_sansbold;
+    }
+
+
+    .group {
+        position: relative;
+        margin-bottom: 20px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    input[type=password], [type=text] {
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        -webkit-appearance: none;
+        display: block;
+        background: #fafafa;
+        color: #636363;
+        width: 100%;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid #757575;
+    }
+
+
+    /* Label */
+
+    label {
+        color: #999;
+        font-size: 18px;
+        font-weight: normal;
+        position: absolute;
+        left: 5px;
+        top: 10px;
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+    }
+
+
+    /* active */
+
+    /*input[type=text]:focus ~ label, input.used ~ label {
+            top: -20px;
+            -webkit-transform: scale(.75);
+            transform: scale(.75);
+            left: -2px;
+            color: #4a89dc;
+        }
+
+        input[type=password]:focus ~ label, input.used ~ label {
+            top: -20px;
+            -webkit-transform: scale(.75);
+            transform: scale(.75);
+            left: -2px;
+            color: #4a89dc;
+        }*/
+
+
+
+    /* Underline */
+
+    .bar {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+
+        .bar:before, .bar:after {
+            content: '';
+            height: 2px;
+            width: 0;
+            bottom: 1px;
+            position: absolute;
+            background: #4a89dc;
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+        }
+
+        .bar:before {
+            left: 50%;
+        }
+
+        .bar:after {
+            right: 50%;
+        }
+
+
+    /* active */
+
+    /*input:focus ~ .bar:before, input:focus ~ .bar:after {
+            width: 50%;
+        }*/
+
+
+    /* Highlight */
+
+    .highlight {
+        position: absolute;
+        height: 60%;
+        width: 100px;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
+
+    /* active */
+
+    input:focus ~ .highlight {
+        -webkit-animation: inputHighlighter 0.3s ease;
+        animation: inputHighlighter 0.3s ease;
+    }
+
+    /* Button */
+
+    .button {
+        position: relative;
+        display: inline-block;
+        padding: 12px 24px;
+        margin: .3em 0 1em 0;
+        width: 100%;
+        vertical-align: middle;
+        color: #fff;
+        font-size: 16px;
+        line-height: 20px;
+        -webkit-font-smoothing: antialiased;
+        text-align: center;
+        letter-spacing: 1px;
+        background: transparent;
+        border: 0; /*border-bottom: 2px solid #3160B6;*/
+        cursor: pointer;
+        -webkit-transition: all 0.15s ease;
+        transition: all 0.15s ease;
+    }
+
+        .button:focus {
+            outline: 0;
+        }
+
+
+    /* Button modifiers */
+
+    .buttonBlue {
+        background: #4a89dc;
+        text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+    }
+
+    .roundCorner {
+        border-radius: 5px;
+    }
+
+    .buttonBlue:hover {
+        background: #357bd8;
+    }
+</style>
+
+<script>
+    function LogInValidation() {
+        var UserName = $.trim($('#UserName').val());
+        var Password = $.trim($('#Password').val());
+        if (UserName.length <= 0) {
+            window.alert('Please enter user name.');
+            //BootstrapDialog.AlertWithFieldToBeFocused({
+            //    message: "Please enter user name.",
+            //    fieldId: "UserName"
+            //});
+        }
+        else if (Password.length <= 0) {
+            window.alert('Please enter password.');
+            //BootstrapDialog.AlertWithFieldToBeFocused({
+            //    message: "Please enter password.",
+            //    fieldId: "Password"
+            //});
+        }
+        else {
+            loginBt_Click(UserName, Password);
+        }
+
+    }
+</script>
+
+<script>
+    function loginBt_Click(username, password) {
+        if (username.length > 0 && username != null) {
+            window.location.href = '@Url.Action("Index", "Search")';
+            @*$.ajax({
+                url: '@Url.Action("Index", "Home")',
+                type: 'POST',
+                data:
+                    {
+                        UserName: username,
+                        Password: password,
+                    },
+                dataType: 'json',
+                success: function (data) {
+                    if (data.Show) {
+                        if (data.ShowMessageInDetail) {
+                            new BootstrapDialog.show({
+                                title: data.MessageTitle,
+                                message: data.MessageDescription,
+                                closable: false,
+                                buttons: [
+                                    {
+                                        label: 'Ok',
+                                        action: function (dialogItself) {
+                                            dialogItself.close();
+                                        }
+                                    },
+                                {
+                                    label: 'Show Messgae in Details',
+                                    action: function () {
+                                        BootstrapDialog.alert(data.MessageCompleteDescription);
+                                    }
+                                }]
+                            });
+                        }
+                        else {
+                            new BootstrapDialog.show({
+                                title: data.MessageTitle,
+                                message: data.MessageDescription,
+                                closable: false,
+                                buttons: [
+                                    {
+                                        label: 'OK',
+                                        action: function (dialogItself) {
+                                            dialogItself.close();
+                                        }
+                                    }]
+                            }
+                                );
+                        }
+                    }
+                    else if (data.RedirectToAction == "Home") {
+                        window.location.href = '@Url.Action("Index", "Home")';
+                    }
+                },
+
+                error: function (xhr, err) {
+                    window.alert(err);
+                }
+            });*@
+    }
+}
+</script>
