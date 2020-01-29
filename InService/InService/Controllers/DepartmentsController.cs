@@ -134,7 +134,7 @@ namespace InService.Controllers
             return db.Departments.Count(e => e.DepartmentId == id) > 0;
         }
 
-        // GET: api/Locations/{LocationId}/Departments
+        // GET: api/Locations/{LocationId}/Departments 
         public List<Department> GetDepartments(int locationId)
         {
             if (db.Locations.Count(l => l.LocationId == locationId) > 0)
