@@ -224,7 +224,6 @@ D:\Users\Administrator\Desktop\InProject\InClient\InClient\bin\System.Web.WebPag
 D:\Users\Administrator\Desktop\InProject\InClient\InClient\bin\Newtonsoft.Json.xml
 D:\Users\Administrator\Desktop\InProject\InClient\InClient\bin\Antlr3.Runtime.pdb
 D:\Users\Administrator\Desktop\InProject\InClient\InClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Users\Administrator\Desktop\InProject\InClient\InClient\obj\Debug\InClient.csprojAssemblyReference.cache
 D:\Users\Administrator\Desktop\InProject\InClient\InClient\obj\Debug\InClient.csproj.CoreCompileInputs.cache
 D:\Users\Administrator\Desktop\InProject\InClient\InClient\obj\Debug\InClient.csproj.CopyComplete
 D:\Users\Administrator\Desktop\InProject\InClient\InClient\obj\Debug\InClient.dll
