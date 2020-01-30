@@ -11,7 +11,7 @@ namespace InService.Util
     {
         public override void OnAuthorization(HttpActionContext actionContext)
         {
-            // we can do our pre exections activities here
+            // we can do our pre exection activities here
         }
     }
 }
