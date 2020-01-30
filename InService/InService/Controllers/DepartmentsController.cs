@@ -13,7 +13,7 @@ using InService.Util;
 
 namespace InService.Controllers
 {
-    [Authorize]
+    [MyAuthorize]
     public class DepartmentsController : ApiController
     {
         private LocalDBEntities db = new LocalDBEntities();
@@ -134,6 +134,7 @@ namespace InService.Controllers
             return db.Departments.Count(e => e.DepartmentId == id) > 0;
         }
 
+        [AllowAnonymous]
         // GET: api/Locations/{LocationId}/Departments 
         public List<Department> GetDepartments(int locationId)
         {

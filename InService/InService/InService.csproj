@@ -224,6 +224,7 @@
     <Compile Include="Util\DBUtil.cs" />
     <Compile Include="Util\InExceptionHandler.cs" />
     <Compile Include="Util\InventoryAgent.cs" />
+    <Compile Include="Util\MyAuthorize.cs" />
     <Compile Include="Util\MyAuthProvider.cs" />
   </ItemGroup>
   <ItemGroup>

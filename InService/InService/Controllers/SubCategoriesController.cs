@@ -13,7 +13,7 @@ using InService.Util;
 
 namespace InService.Controllers
 {
-    [Authorize]
+    [MyAuthorize]
     public class SubCategoriesController : ApiController
     {
         private LocalDBEntities db = new LocalDBEntities();
@@ -134,6 +134,7 @@ namespace InService.Controllers
             return db.SubCategories.Count(e => e.SubCategoryId == id) > 0;
         }
 
+        [AllowAnonymous]
         // GET: api/Locations/{locationId}/Departments/{departmentId}/Categories/{categoryId}/SubCategories
         public List<SubCategory> GetSubCategories(int locationId, int departmentId, int categoryId)
         {

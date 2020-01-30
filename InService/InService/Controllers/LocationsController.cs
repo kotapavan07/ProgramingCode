@@ -9,14 +9,16 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using InService;
+using InService.Util;
 
 namespace InService.Controllers
 {
-    [Authorize]
+    [MyAuthorize]
     public class LocationsController : ApiController
     {
         private LocalDBEntities db = new LocalDBEntities();
 
+        [AllowAnonymous]
         // GET: api/Locations
         public IQueryable<Location> GetLocations()
         {
