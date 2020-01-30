@@ -149,7 +149,6 @@ D:\Users\Administrator\Desktop\InProject\InService\InService\bin\System.Web.WebP
 D:\Users\Administrator\Desktop\InProject\InService\InService\bin\System.Web.WebPages.Razor.xml
 D:\Users\Administrator\Desktop\InProject\InService\InService\bin\System.Web.Optimization.xml
 D:\Users\Administrator\Desktop\InProject\InService\InService\bin\Antlr3.Runtime.pdb
-D:\Users\Administrator\Desktop\InProject\InService\InService\obj\Debug\InService.csprojAssemblyReference.cache
 D:\Users\Administrator\Desktop\InProject\InService\InService\obj\Debug\InService.csproj.CoreCompileInputs.cache
 D:\Users\Administrator\Desktop\InProject\InService\InService\obj\Debug\InService.csproj.CopyComplete
 D:\Users\Administrator\Desktop\InProject\InService\InService\obj\Debug\InService.dll
