@@ -15,13 +15,21 @@ namespace InClient.Controllers
         // GET: Login
         public ActionResult Index()
         {
-            InventoryModel data = new InventoryModel();
-            if (RouteData.Values.ContainsKey("id"))
+            try
             {
-                string skuId = RouteData.Values["id"].ToString();
-                data = InWebService.HttpRequest<InventoryModel>("Inventory/GetSkuInfo?skuId=" + skuId);
+                InventoryModel data = new InventoryModel();
+                if (RouteData.Values.ContainsKey("id"))
+                {
+                    string skuId = RouteData.Values["id"].ToString();
+                    data = InWebService.HttpRequest<InventoryModel>("Inventory/GetSkuInfo?skuId=" + skuId);
+                }
+                return View(data);
             }
-            return View(data);
+            catch (Exception ex)
+            {
+                ViewBag.Message = ex.Message;
+                return View("Index");
+            }
         }
     }
 }

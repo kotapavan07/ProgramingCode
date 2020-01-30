@@ -1,8 +1,11 @@
 ﻿using InClient.Models;
 using InClient.Util;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -29,7 +32,21 @@ namespace InClient.Controllers
         [HttpPost]
         public ActionResult SaveRecord(int skuId, string skuName, int subCategoryId)
         {
-            return Json("");
+            try
+            {
+                DBinventory dBinventory = new DBinventory();
+                dBinventory.SkuId = skuId;
+                dBinventory.SkuName = skuName;
+                dBinventory.SubCategoryId = subCategoryId;
+                var credentialString = JsonConvert.SerializeObject(dBinventory, Formatting.None);
+                InWebService.HttpRequest<object>("Inventory/PutInventory", dBinventory, InHttpAction.Post);
+                return Json("Updated");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Message = ex.Message;
+                return View("Index");
+            }
         }
 
         public List<DepartmentModel> GetDepartments(int locationId)
@@ -65,5 +82,12 @@ namespace InClient.Controllers
             locations = InWebService.HttpRequest<List<LocationModel>>("api/Locations");
             return locations != null ? locations : new List<LocationModel>();
         }
+    }
+
+    public class DBinventory
+    {
+        public int SkuId { set; get; }
+        public string SkuName { set; get; }
+        public int SubCategoryId { set; get; }
     }
 }

@@ -31,6 +31,21 @@ namespace InService.Util
             command.Parameters.Add(param);
         }
 
+        public static void SetStringParam(IDbCommand command, string paramName, string paramValue)
+        {
+            IDbDataParameter param = command.CreateParameter();
+            param.ParameterName = paramName;
+            if (paramValue != null)
+            {
+                param.Value = paramValue;
+            }
+            else
+            {
+                param.Value = DBNull.Value;
+            }
+            command.Parameters.Add(param);
+        }
+
         public List<Inventory> GetInInventories(int locationId, int departmentId, int categoryId, int subCategoryId)
         {
             List<Inventory> list = new List<Inventory>();
@@ -138,13 +153,15 @@ namespace InService.Util
                 dataReader = dataCommand.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    details = new Inventory();
-                    details.SkuId = dataReader.IsDBNull(0) ? int.MinValue : dataReader.GetInt32(0);
-                    details.SkuName = dataReader.IsDBNull(1) ? null : dataReader.GetString(1);
-                    details.LocationName = dataReader.IsDBNull(2) ? null : dataReader.GetString(2);
-                    details.DepartmentName = dataReader.IsDBNull(3) ? null : dataReader.GetString(3);
-                    details.CategoryName = dataReader.IsDBNull(4) ? null : dataReader.GetString(4);
-                    details.SubCategoryName = dataReader.IsDBNull(5) ? null : dataReader.GetString(5);
+                    details = new Inventory
+                    {
+                        SkuId = dataReader.IsDBNull(0) ? int.MinValue : dataReader.GetInt32(0),
+                        SkuName = dataReader.IsDBNull(1) ? null : dataReader.GetString(1),
+                        LocationName = dataReader.IsDBNull(2) ? null : dataReader.GetString(2),
+                        DepartmentName = dataReader.IsDBNull(3) ? null : dataReader.GetString(3),
+                        CategoryName = dataReader.IsDBNull(4) ? null : dataReader.GetString(4),
+                        SubCategoryName = dataReader.IsDBNull(5) ? null : dataReader.GetString(5)
+                    };
                 }
             }
             catch (Exception ex)
@@ -165,6 +182,47 @@ namespace InService.Util
                 }
             }
             return details;
+        }
+
+        public void UpdateInventory(int skuId, string skuName, int subCategoryId)
+        {
+            IDbConnection connection = null;
+            IDbTransaction transaction = null;
+            IDbCommand dataCommand = null;
+            StringBuilder sqlQuery = new StringBuilder();
+            sqlQuery.Append(" update Inventory set SkuName = @skuName, SubCategoryId = @subCategoryId where SkuId = @skuid ");
+            try
+            {
+                connection = DBUtil.GetOpenConnection();
+                if (connection.State != ConnectionState.Open)
+                    connection.Open();
+                dataCommand = connection.CreateCommand();
+                dataCommand.CommandText = sqlQuery.ToString();
+                dataCommand.Transaction = transaction;
+                SetStringParam(dataCommand, "@skuName", skuName);
+                SetIntParam(dataCommand, "@subCategoryId", subCategoryId);
+                SetIntParam(dataCommand, "@SkuId", skuId);
+                if (transaction != null)
+                {
+                    dataCommand.Transaction = transaction;
+                }
+                dataCommand.ExecuteNonQuery();
+                dataCommand = null;
+                sqlQuery = null;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (dataCommand != null)
+                {
+                    dataCommand.Dispose();
+                    dataCommand = null;
+                }
+            }
         }
 
         public bool DepartmentExists(int locationId, int departmentId)

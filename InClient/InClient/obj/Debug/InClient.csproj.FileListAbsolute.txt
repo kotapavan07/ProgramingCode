@@ -228,3 +228,4 @@ D:\Users\Administrator\Desktop\InProject\InClient\InClient\obj\Debug\InClient.cs
 D:\Users\Administrator\Desktop\InProject\InClient\InClient\obj\Debug\InClient.csproj.CopyComplete
 D:\Users\Administrator\Desktop\InProject\InClient\InClient\obj\Debug\InClient.dll
 D:\Users\Administrator\Desktop\InProject\InClient\InClient\obj\Debug\InClient.pdb
+D:\Users\Administrator\Desktop\InProject\InClient\InClient\obj\Debug\InClient.csprojAssemblyReference.cache

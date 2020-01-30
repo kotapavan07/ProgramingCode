@@ -46,14 +46,14 @@ namespace InClient.Util
             }
         }
 
-        public static T HttpRequest<T>(string urn, object args = null, UFHttpAction? httpMethod = null)
+        public static T HttpRequest<T>(string urn, object args = null, InHttpAction? httpMethod = null)
         {
             if (httpMethod == null)
             {
                 if (args != null)
-                    httpMethod = UFHttpAction.Post;
+                    httpMethod = InHttpAction.Post;
                 else
-                    httpMethod = UFHttpAction.Get;
+                    httpMethod = InHttpAction.Get;
             }
 
             ValidateUrn(ref urn);
@@ -61,25 +61,25 @@ namespace InClient.Util
             result = new HttpResponseMessage();
             try
             {
-                if (httpMethod == UFHttpAction.Get)
+                if (httpMethod == InHttpAction.Get)
                 {
                     response = UFHttpClient.GetAsync(urn);
                 }
-                else if (httpMethod == UFHttpAction.Post)
+                else if (httpMethod == InHttpAction.Post)
                 {
                     if (args == null)
                         response = UFHttpClient.PostAsJsonAsync(urn, args);
                     else if (args != null)
                         response = UFHttpClient.PostAsJsonAsync(urn, args);
                 }
-                else if (httpMethod == UFHttpAction.Put)
+                else if (httpMethod == InHttpAction.Put)
                 {
                     if (args == null)
                         response = UFHttpClient.PutAsJsonAsync(urn, args);
                     else if (args != null)
                         response = UFHttpClient.PutAsJsonAsync(urn, args);
                 }
-                else if (httpMethod == UFHttpAction.Delete)
+                else if (httpMethod == InHttpAction.Delete)
                 {
                     response = UFHttpClient.DeleteAsync(urn);
                 }
@@ -189,7 +189,7 @@ namespace InClient.Util
     //}
 
     [Serializable]
-    public enum UFHttpAction
+    public enum InHttpAction
     {
         Unknown = -1,
         Get = 0,

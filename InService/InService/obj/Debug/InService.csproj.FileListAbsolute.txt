@@ -153,3 +153,4 @@ D:\Users\Administrator\Desktop\InProject\InService\InService\obj\Debug\InService
 D:\Users\Administrator\Desktop\InProject\InService\InService\obj\Debug\InService.csproj.CopyComplete
 D:\Users\Administrator\Desktop\InProject\InService\InService\obj\Debug\InService.dll
 D:\Users\Administrator\Desktop\InProject\InService\InService\obj\Debug\InService.pdb
+D:\Users\Administrator\Desktop\InProject\InService\InService\obj\Debug\InService.csprojAssemblyReference.cache

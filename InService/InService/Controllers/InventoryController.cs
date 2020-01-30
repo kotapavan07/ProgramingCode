@@ -31,5 +31,21 @@ namespace InService.Controllers
             InventoryAgent ia = new InventoryAgent();
             return Ok<Inventory>(ia.GetSku(skuId));
         }
+
+        [HttpPost]
+        [Route("PutInventory")]
+        public IHttpActionResult PutInventory([FromBody] DBinventory dBinventory)
+        {
+            InventoryAgent ia = new InventoryAgent();
+            ia.UpdateInventory(dBinventory.SkuId, dBinventory.SkuName, dBinventory.SubCategoryId);
+            return Ok();
+        }
+    }
+
+    public class DBinventory
+    {
+        public int SkuId { set; get; }
+        public string SkuName { set; get; }
+        public int SubCategoryId { set; get; }
     }
 }
