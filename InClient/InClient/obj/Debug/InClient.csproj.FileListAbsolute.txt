@@ -56,6 +56,121 @@ d:\Users\Administrator\Documents\Visual Studio 2017\Projects\InClient\InClient\o
 d:\Users\Administrator\Documents\Visual Studio 2017\Projects\InClient\InClient\bin\System.Net.Http.Formatting.dll
 d:\Users\Administrator\Documents\Visual Studio 2017\Projects\InClient\InClient\bin\System.Net.Http.Formatting.xml
 d:\Users\Administrator\Documents\Visual Studio 2017\Projects\InClient\InClient\obj\Debug\InClient.csprojAssemblyReference.cache
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\InClient.dll.config
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\InClient.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\InClient.pdb
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\csc.exe
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\csc.exe.config
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\csc.rsp
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\csi.exe
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\csi.rsp
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\System.AppContext.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\System.Collections.Immutable.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\System.IO.FileSystem.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\System.Reflection.Metadata.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\vbc.exe
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\vbc.exe.config
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\vbc.rsp
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\VBCSCompiler.exe
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\roslyn\VBCSCompiler.exe.config
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\Antlr3.Runtime.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\Microsoft.Web.Infrastructure.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\Newtonsoft.Json.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\System.Net.Http.Formatting.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\System.Web.Helpers.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\System.Web.Mvc.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\System.Web.Optimization.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\System.Web.Razor.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\System.Web.WebPages.Deployment.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\System.Web.WebPages.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\System.Web.WebPages.Razor.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\WebGrease.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\System.Net.Http.Formatting.xml
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\System.Web.Helpers.xml
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\System.Web.Mvc.xml
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\System.Web.Optimization.xml
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\System.Web.Razor.xml
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\System.Web.WebPages.xml
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\System.Web.WebPages.Deployment.xml
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\System.Web.WebPages.Razor.xml
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\Newtonsoft.Json.xml
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\Antlr3.Runtime.pdb
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\obj\Debug\InClient.csprojAssemblyReference.cache
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\obj\Debug\InClient.csproj.CoreCompileInputs.cache
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\obj\Debug\InClient.csproj.CopyComplete
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\obj\Debug\InClient.dll
+D:\Users\Jessy\Downloads\ProgramingCode-master\InClient\InClient\obj\Debug\InClient.pdb
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\InClient.dll.config
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\InClient.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\InClient.pdb
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\csc.exe
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\csc.exe.config
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\csc.rsp
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\csi.exe
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\csi.rsp
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\Microsoft.CodeAnalysis.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\Microsoft.CSharp.Core.targets
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\Microsoft.VisualBasic.Core.targets
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\System.AppContext.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\System.Collections.Immutable.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\System.Diagnostics.StackTrace.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\System.IO.FileSystem.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\System.IO.FileSystem.Primitives.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\System.Reflection.Metadata.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\vbc.exe
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\vbc.exe.config
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\vbc.rsp
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\VBCSCompiler.exe
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\roslyn\VBCSCompiler.exe.config
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\Antlr3.Runtime.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\Microsoft.Web.Infrastructure.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\Newtonsoft.Json.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\System.Net.Http.Formatting.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\System.Web.Helpers.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\System.Web.Mvc.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\System.Web.Optimization.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\System.Web.Razor.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\System.Web.WebPages.Deployment.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\System.Web.WebPages.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\System.Web.WebPages.Razor.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\WebGrease.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\System.Net.Http.Formatting.xml
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\System.Web.Helpers.xml
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\System.Web.Mvc.xml
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\System.Web.Optimization.xml
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\System.Web.Razor.xml
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\System.Web.WebPages.xml
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\System.Web.WebPages.Deployment.xml
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\System.Web.WebPages.Razor.xml
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\Newtonsoft.Json.xml
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\Antlr3.Runtime.pdb
+Y:\Kota\in project\GitSolutions\InClient\InClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+Y:\Kota\in project\GitSolutions\InClient\InClient\obj\Debug\InClient.csproj.CoreCompileInputs.cache
+Y:\Kota\in project\GitSolutions\InClient\InClient\obj\Debug\InClient.csproj.CopyComplete
+Y:\Kota\in project\GitSolutions\InClient\InClient\obj\Debug\InClient.dll
+Y:\Kota\in project\GitSolutions\InClient\InClient\obj\Debug\InClient.pdb
 D:\Users\Administrator\Desktop\InProject\InClient\InClient\bin\InClient.dll.config
 D:\Users\Administrator\Desktop\InProject\InClient\InClient\bin\InClient.dll
 D:\Users\Administrator\Desktop\InProject\InClient\InClient\bin\InClient.pdb

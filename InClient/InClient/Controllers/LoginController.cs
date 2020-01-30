@@ -28,7 +28,7 @@ namespace InClient.Controllers
                 var client = new HttpClient();
 
                 var authorizationHeader = Convert.ToBase64String(Encoding.UTF8.GetBytes(Request.Form["UserName"] + ":secretKey"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basicwe", authorizationHeader);
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authorizationHeader);
 
                 var form = new Dictionary<string, string>
                {

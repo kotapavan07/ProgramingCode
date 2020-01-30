@@ -1,4 +1,4 @@
-﻿@model InClient.Models.SKUViewModel
+﻿@model InClient.Models.SKUSearchViewModel
 @{
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -72,11 +72,11 @@ columns: new[]
         window.location = "/Details/Index/" + skuId;
     });
 
-    $(document).ready(function () {
            //Dropdownlist Selectedchange event
             $("#LocationList").change(function () {
                 $("#DepartmentList").empty().append('<option value="0">Please select</option>');
-
+                $("#CategoryList").empty().append('<option value="0">Please select</option>');
+                $("#SubcategoryList").empty().append('<option value="0">Please select</option>');
                 $.ajax({
                     type: 'POST',
                     url: '@Url.Action("GetDepartments")',
@@ -90,7 +90,7 @@ columns: new[]
                         });
                     },
                     error: function (ex) {
-                        alert('Failed to retrieve states.' + ex.responseText);
+                        alert('Failed to retrieve states.' + ex);
                     }
                 });
                 return false;
@@ -98,6 +98,7 @@ columns: new[]
 
             $("#DepartmentList").change(function () {
                 $("#CategoryList").empty().append('<option value="0">Please select</option>');
+                $("#SubcategoryList").empty().append('<option value="0">Please select</option>');
 
                 $.ajax({
                     type: 'POST',
@@ -115,7 +116,7 @@ columns: new[]
                         });
                     },
                     error: function (ex) {
-                        alert('Failed to retrieve states.' + ex.responseText);
+                        alert('Failed to retrieve states.' + ex);
                     }
                 });
                 return false;
@@ -141,7 +142,7 @@ columns: new[]
                         });
                     },
                     error: function (ex) {
-                        alert('Failed to retrieve states.' + ex.responseText);
+                        alert('Failed to retrieve states.' + ex);
                     }
                 });
                 return false;
@@ -154,12 +155,11 @@ columns: new[]
                     url: '@Url.Action("SetSubCategory")',
                     dataType: 'json',
                     data: {
-                        subcategoryId: $("#SubcategoryList").val()
+                        SubcategoryId: $("#SubcategoryList").val()
                     }
                 });
                 return false;
         });
-    });
 </script>
 
 

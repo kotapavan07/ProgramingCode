@@ -19,7 +19,6 @@ namespace InClient.Controllers
             if (RouteData.Values.ContainsKey("id"))
             {
                 string skuId = RouteData.Values["id"].ToString();
-                //data = WebService.GetServiceData("Inventory/GetSkuInfo?skuId=" + skuId).Content.ReadAsAsync<InventoryModel>().Result;
                 data = InWebService.HttpRequest<InventoryModel>("Inventory/GetSkuInfo?skuId=" + skuId);
             }
             return View(data);

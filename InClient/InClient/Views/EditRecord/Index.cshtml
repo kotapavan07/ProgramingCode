@@ -1,57 +1,80 @@
-﻿@model InClient.Models.SKUViewModel
+﻿@model InClient.Models.SKUDetailViewModel
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.SkuId = Model.SkuId;
+    ViewBag.SkuName = Model.SkuName;
+    ViewBag.Locations = new SelectList(Model.Locations, "LocationId", "LocationName", Model.LocationId);
+    ViewBag.Departments = new SelectList(Model.Departments, "DepartmentId", "DepartmentName", Model.DepartmentId);
+    ViewBag.Categories = new SelectList(Model.Categories, "CategoryId", "CategoryName", Model.CategoryId);
+    ViewBag.Subcategories = new SelectList(Model.Subcategories, "SubCategoryId", "SubCategoryName", Model.SubCategoryId);
 }
 
-<h3>Edit Details</h3>
-@using (Html.BeginForm("Index", "EditRecord", FormMethod.Post))
-{
-    <table>
-        <tr>
-            <td> @Html.Label("SKUName", "SKU Name: ") </td>
-            <td> @Html.TextBoxFor(m => m.SkuId) </td>
-        </tr>
-        <tr>
-            <td> @Html.Label("LabelName", "Location: ") </td>
-            <td> @Html.DropDownList("Locations", new SelectList(Model.Locations, "LocationId", "LocationName"), "Please select", htmlAttributes: new { id = "LocationList", @class = "form-control" }) </td>
-        </tr>
-        <tr>
-            <td> @Html.Label("LocationDepartments", "Department: ") </td>
-            <td>
-                @Html.DropDownList("Departments", new SelectList(Model.Departments, "DepartmentId", "DepartmentName"), "Please select", htmlAttributes: new { id = "DepartmentList", @class = "form-control" })
-            </td>
-        </tr>
-        <tr>
-            <td> @Html.Label("DepartmentCategories", "Category: ") </td>
-            <td>
-                @Html.DropDownList("Categories", new SelectList(Model.Categories, "CategoryId", "CategoryName"), "Please select", htmlAttributes: new { id = "CategoryList", @class = "form-control" })
-            </td>
-        </tr>
-        <tr>
-            <td> @Html.Label("CategorySubcategories", "SubCategory: ") </td>
-            <td>
-                @Html.DropDownList("Subcategories", new SelectList(Model.Subcategories, "CategoryId", "CategoryName"), "Please select", htmlAttributes: new { id = "SubcategoryList", @class = "form-control" })
-            </td>
-        </tr>
+<h3 style="padding-left: 50px; font-weight:bold; text-decoration-line:underline;">Edit Details</h3>
 
-        <tr style="background-color:white;">
-            <td><input type="submit" id="sumitbtn" value="save" class="btn btn-primary" /></td>
-        </tr>
-    </table>
-}
+<table>
+    <tr>
+        <td> @Html.Label("SKUName", "SKU Name: ") </td>
+        <td> @Html.TextBoxFor(model => model.SkuName, Model.SkuName, htmlAttributes: new { id = "SkuName" })</td>
+    </tr>
+    <tr>
+        <td> @Html.Label("LabelName", "Location: ") </td>
+        <td> @Html.DropDownListFor(model => model.LocationId, (IEnumerable<SelectListItem>)ViewBag.Locations, htmlAttributes: new { id = "LocationList", @class = "form-control" }) </td>
+    </tr>
+    <tr>
+        <td> @Html.Label("LocationDepartments", "Department: ") </td>
+        <td>
+            @Html.DropDownListFor(model => model.DepartmentId, (IEnumerable<SelectListItem>)ViewBag.Departments, htmlAttributes: new { id = "DepartmentList", @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td> @Html.Label("DepartmentCategories", "Category: ") </td>
+        <td>
+            @Html.DropDownListFor(model => model.CategoryId, (IEnumerable<SelectListItem>)ViewBag.Categories, htmlAttributes: new { id = "CategoryList", @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td> @Html.Label("CategorySubcategories", "SubCategory: ") </td>
+        <td>
+            @Html.DropDownListFor(model => model.SubCategoryId, (IEnumerable<SelectListItem>)ViewBag.Subcategories, htmlAttributes: new { id = "SubcategoryList", @class = "form-control" })
+        </td>
+    </tr>
+
+    <tr style="background-color:white;">
+        <td><input type="submit" id="sumitbtn" value="save" class="btn btn-primary" /></td>
+    </tr>
+</table>
 
 <script>
+    $("#sumitbtn").click(function () {
+        console.log("sdfsdf");
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("SaveRecord")',
+            dataType: 'json',
+            data: {
+                skuId: @Model.SkuId,
+                skuName: $("#SkuName").val(),
+                subCategoryId: $("#SubcategoryList").val()
+            },
+            success: function (mems) {
+                alert('Record Saved Succesfully');
+                window.location.href = '@Url.Action("Index", "Search")';
+            },
+            error: function (ex) {
+                alert('Failed to save sku.' + ex);
+            }
+        });
+    });
 
-
-    $(document).ready(function () {
            //Dropdownlist Selectedchange event
             $("#LocationList").change(function () {
                 $("#DepartmentList").empty().append('<option value="0">Please select</option>');
-
+                $("#CategoryList").empty().append('<option value="0">Please select</option>');
+                $("#SubcategoryList").empty().append('<option value="0">Please select</option>');
                 $.ajax({
                     type: 'POST',
-                    url: '@Url.Action("GetDepartments")',
+                    url: '@Url.Action("GetDepartments", "Search")',
                     dataType: 'json',
                     data: { locationId: $("#LocationList").val() },
                     success: function (mems) {
@@ -70,10 +93,11 @@
 
             $("#DepartmentList").change(function () {
                 $("#CategoryList").empty().append('<option value="0">Please select</option>');
+                $("#SubcategoryList").empty().append('<option value="0">Please select</option>');
 
                 $.ajax({
                     type: 'POST',
-                    url: '@Url.Action("GetCategories")',
+                    url: '@Url.Action("GetCategories", "Search")',
                     dataType: 'json',
                     data: {
                         locationId: $("#LocationList").val(),
@@ -98,7 +122,7 @@
 
                 $.ajax({
                     type: 'POST',
-                    url: '@Url.Action("GetSubcategories")',
+                    url: '@Url.Action("GetSubcategories", "Search")',
                     dataType: 'json',
                     data: {
                         locationId: $("#LocationList").val(),
@@ -119,19 +143,6 @@
                 return false;
         });
 
-        $("#SubcategoryList").change(function () {
-
-                $.ajax({
-                    type: 'GET',
-                    url: '@Url.Action("SetSubCategory")',
-                    dataType: 'json',
-                    data: {
-                        subcategoryId: $("#SubcategoryList").val()
-                    }
-                });
-                return false;
-            });
-        });
 </script>
 
 

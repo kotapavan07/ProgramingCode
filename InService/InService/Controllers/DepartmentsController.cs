@@ -134,7 +134,6 @@ namespace InService.Controllers
             return db.Departments.Count(e => e.DepartmentId == id) > 0;
         }
 
-        [AllowAnonymous]
         // GET: api/Locations/{LocationId}/Departments 
         public List<Department> GetDepartments(int locationId)
         {

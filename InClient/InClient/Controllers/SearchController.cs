@@ -17,7 +17,7 @@ namespace InClient.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            SKUViewModel model = new SKUViewModel();
+            SKUSearchViewModel model = new SKUSearchViewModel();
             model.Locations = GetLocations();
             model.Inventories = GetSearchResults();
             return View(model);
@@ -34,22 +34,9 @@ namespace InClient.Controllers
                 "&departmentId=" + departmentId + "&categoryId=" + categoryId + "&subCategoryId=" + subCategoryId;
 
             List<InventoryModel> items = new List<InventoryModel>();
-            //items = WebService.GetServiceData(dataUrl).Content.ReadAsAsync<List<InventoryModel>>().Result;
             items = InWebService.HttpRequest<List<InventoryModel>>(dataUrl);
             return items;
         }
-
-        //[HttpPost]
-        //public ActionResult GetSearchResults(int locationId, int departmentId, int categoryId, int subCategoryId)
-        //{
-        //    string dataUrl = "Inventory/GetInventoryInfo?locationId=" + locationId +
-        //        "&departmentId=" + departmentId + "&categoryId=" + categoryId + "&subCategoryId=" + subCategoryId;
-
-        //    List<InventoryModel> items = new List<InventoryModel>();
-        //    items = GetServiceData(dataUrl).Content.ReadAsAsync<List<InventoryModel>>().Result;
-
-        //    return Json(items);
-        //}
 
         [HttpPost]
         public ActionResult GetDepartments(int locationId)
@@ -57,9 +44,8 @@ namespace InClient.Controllers
             Session["LocationId"] = locationId;
             List<DepartmentModel> items = new List<DepartmentModel>();
             string dataUrl = "api/Locations/"+ locationId + "/Departments";
-            //items = WebService.GetServiceData(dataUrl).Content.ReadAsAsync<List<DepartmentModel>>().Result;
             items = InWebService.HttpRequest<List<DepartmentModel>>(dataUrl);
-            return Json(new SelectList(items, "DepartmentId", "DepartmentName"));
+            return Json(new SelectList(items != null ? items : new List<DepartmentModel>(), "DepartmentId", "DepartmentName"));
         }
 
         [HttpPost]
@@ -68,9 +54,8 @@ namespace InClient.Controllers
             List<CategoryModel> items = new List<CategoryModel>();
             Session["DepartmentId"] = departmentId;
             string dataUrl = "api/Locations/" + locationId + "/Departments/" + departmentId + "/Categories";
-            //items = WebService.GetServiceData(dataUrl).Content.ReadAsAsync<List<CategoryModel>>().Result;
             items = InWebService.HttpRequest<List<CategoryModel>>(dataUrl);
-            return Json(new SelectList(items, "CategoryId", "CategoryName"));
+            return Json(new SelectList(items != null ? items : new List<CategoryModel>(), "CategoryId", "CategoryName"));
         }
 
         [HttpPost]
@@ -79,17 +64,15 @@ namespace InClient.Controllers
             Session["CategoryId"] = categoryId;
             List<SubcategoryModel> items = new List<SubcategoryModel>();
             string dataUrl = "api/Locations/" + locationId + "/Departments/" + departmentId + "/Categories/"+ categoryId + "/SubCategories";
-            //items = WebService.GetServiceData(dataUrl).Content.ReadAsAsync<List<SubcategoryModel>>().Result;
             items = InWebService.HttpRequest<List<SubcategoryModel>>(dataUrl);
-            return Json(new SelectList(items, "SubcategoryId", "SubcategoryName"));
+            return Json(new SelectList(items != null ? items : new List<SubcategoryModel>(), "SubcategoryId", "SubcategoryName"));
         }
 
         public List<LocationModel> GetLocations()
         {
             List<LocationModel> locations = new List<LocationModel>();
-            //locations = WebService.GetServiceData("api/Locations").Content.ReadAsAsync<List<LocationModel>>().Result;
             locations = InWebService.HttpRequest<List<LocationModel>>("api/Locations");
-            return locations;
+            return locations != null ? locations : new List<LocationModel>();
         }
 
         [HttpGet]
@@ -97,16 +80,5 @@ namespace InClient.Controllers
         {
             Session["SubcategoryId"] = subCategoryId;
         }
-
-        // Collection for Inventories
-        public List<InventoryModel> GetAllInventories()
-        {
-            List<InventoryModel> items = new List<InventoryModel>();
-            //items = GetServiceData("api/Inventory/GetInventoryInfo").Content.ReadAsAsync<List<InventoryModel>>().Result;
-            items.Add(new InventoryModel { SkuId = 1, SkuName = "SKUFoods", CategoryName = "Bread", DepartmentName = "Food", LocationName = "HyderabadFoods" });
-            items.Add(new InventoryModel { SkuId = 2, SkuName = "SKUBeverages", CategoryName = "Drink", DepartmentName = "Beverages", LocationName = "HyderabadBeverages" });
-            return items;
-        }
-
     }
 }

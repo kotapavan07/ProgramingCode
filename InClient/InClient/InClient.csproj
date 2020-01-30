@@ -133,7 +133,8 @@
     <Compile Include="Models\DepartmentModel.cs" />
     <Compile Include="Models\InventoryModel.cs" />
     <Compile Include="Models\LocationModel.cs" />
-    <Compile Include="Models\SKUViewModel.cs" />
+    <Compile Include="Models\SKUDetailViewModel.cs" />
+    <Compile Include="Models\SKUSearchViewModel.cs" />
     <Compile Include="Models\SubcategoryModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
